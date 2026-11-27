@@ -31,6 +31,25 @@
   }), { rootMargin: '-45% 0px -50% 0px' });
   links.forEach(a => { const t = $(a.getAttribute('href')); if (t) spy.observe(t); });
 
+  // Back to top button
+  const backToTopBtn = document.createElement('button');
+  backToTopBtn.innerHTML = '↑';
+  backToTopBtn.className = 'back-to-top';
+  backToTopBtn.setAttribute('aria-label', 'Zurück nach oben');
+  document.body.appendChild(backToTopBtn);
+
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTopBtn.classList.add('visible');
+    } else {
+      backToTopBtn.classList.remove('visible');
+    }
+  });
+
   // ===== Ruhiges Einblenden mit GSAP =====
   if (!window.gsap || !window.ScrollTrigger) { root.classList.remove('js'); return; }
   gsap.registerPlugin(ScrollTrigger);

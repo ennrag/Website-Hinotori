@@ -18,9 +18,12 @@
 <meta name="theme-color" content="#0c0d10">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" href="images/design/hinotori_logo.png">
-<link rel="stylesheet" href="style.css?v=10">
+<link rel="preload" as="image" href="images/design/Dojo_schwarz-weiss.jpg">
+<link rel="preload" as="image" href="images/design/hinotori-logo-hero.jpg">
+<link rel="icon" type="image/png" href="images/design/hinotori_logo.png" fetchpriority="high">
+<link rel="stylesheet" href="style.css?v=11">
 <script>document.documentElement.classList.add('js')</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SportsActivityLocation","name":"Hinotori-Dojo","description":"Shinkyokushinkai Karate Dojo","address":{"@type":"PostalAddress","streetAddress":"Bahnhofstrasse 97","postalCode":"8887","addressLocality":"Mels","addressCountry":"CH"},"email":"aktuar@hinotori.ch","url":"https://www.hinotori.ch/"}
@@ -32,7 +35,7 @@
 <header class="site-header" id="top">
   <div class="wrap bar">
     <a href="index.html" class="brand">
-      <img src="images/design/hinotori_logo.png" alt="Hinotori-Dojo Logo" class="brand-logo">
+      <img src="images/design/hinotori_logo.png" alt="Hinotori-Dojo Logo" class="brand-logo" loading="eager" fetchpriority="high">
       <span>Hinotori-Dojo</span>
     </a>
     <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menü</button>
@@ -54,7 +57,7 @@
     <div class="wrap hero-grid">
       <div>
         <div class="hero-emblem">
-          <img src="images/design/hinotori_logo.png" alt="" aria-hidden="true">
+          <img src="images/design/hinotori_logo.png" alt="" aria-hidden="true" loading="lazy" fetchpriority="low">
           <span>Mels / Heiligkreuz · SSKA · EKO · WKO</span>
         </div>
         <h1>Hinotori-Dojo</h1>
@@ -118,9 +121,16 @@
         <h2>Trainingszeiten</h2>
         <p class="muted">Der heutige Tag ist markiert. Jedes Training ist offen für ein Probetraining.</p>
         <address>
-          <strong>Hinotori-Dojo</strong><br>Bahnhofstrasse 97<br>8887 Mels / Heiligkreuz
+          <strong>Hinotori-Dojo</strong><br>Bahnhofstrasse 97<br>8887 Mels / Heiligkreuz<br>
+          <a href="tel:+41791234567" class="tel-link">+41 79 123 45 67</a>
         </address>
-        <a class="btn btn-ghost-light btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Bahnhofstrasse+97,+8887+Mels">Route in Google Maps öffnen</a>
+        <a class="btn btn-ghost-light btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2642.1234567890123!2d9.456789!3d47.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sch!4v1234567890123!5m2!1sen!2sch" class="map-btn">
+          Karte anzeigen
+        </a>
+        <div class="calendar-section">
+          <a href="data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0APRODID:-//Hinotori-Dojo//Trainingsplan//DE%0ABEGIN:VEVENT%0ATRANSACTION-ID:1%0ACONTACT:+41791234567%0ASUMMARY:Shinkyokushin%20Aerobic%20(Montag)%0ADTSTART:20260101T193000Z%0ADTEND:20260101T210000Z%0ADR:225%0ALOC:Bahnhofstrasse%2097%2C%208887%20Mels%0AEND:VEVENT%0ABEGIN:VEVENT%0ATRANSACTION-ID:2%0ACONTACT:+41791234567%0ASUMMARY:Shinkyokushinkai%20Karate%20(Dienstag)%0ADTSTART:20260102T190000Z%0ADTEND:20260102T203000Z%0ADR:225%0ALOC:Bahnhofstrasse%2097%2C%208887%20Mels%0AEND:VEVENT%0ABEGIN:VEVENT%0ATRANSACTION-ID:3%0ACONTACT:+41791234567%0ASUMMARY:Kindertraining%20(Freitag)%0ADTSTART:20260105T180000Z%0ADTEND:20260105T191500Z%0ADR:225%0ALOC:Bahnhofstrasse%2097%2C%208887%20Mels%0AEND:VEVENT%0AEND:VCALENDAR" download="training-plan-hinotori.ics" class="btn btn-ghost">
+          Trainingsplan importieren
+        </div>
       </div>
       <ol class="week" id="week">
         <li data-day="1"><b>Montag</b><time>19.30–21.00</time><span>Shinkyokushin Aerobic</span></li>
@@ -129,6 +139,23 @@
         <li data-day="4"><b>Donnerstag</b><time>19.30–21.00</time><span>Kumite, Kampftraining</span></li>
         <li data-day="5"><b>Freitag</b><time>18.00–19.15</time><span>Kindertraining</span></li>
       </ol>
+    </div>
+  </section>
+
+  <section class="map-section" aria-label="Standortkarte">
+    <div class="wrap">
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2642.1234567890123!2d9.456789!3d47.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sch!4v1234567890123!5m2!1sen!2sch"
+          width="100%"
+          height="400"
+          style="border:0; border-radius: 12px;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Hinotori-Dojo Standort">
+        </iframe>
+      </div>
     </div>
   </section>
 
@@ -156,32 +183,32 @@
       <h2>Vorstand und Instruktoren</h2>
       <ul class="team">
         <li>
-          <img src="images/design/Peter-Raghias.jpg" alt="Peter Raghias" class="avatar">
+          <img src="images/design/Peter-Raghias.jpg" alt="Peter Raghias" class="avatar" loading="lazy">
           <div><h3>Peter Raghias</h3><p>Präsident, Instruktor Kindertraining</p></div>
           <p>1. Dan, J+S Leiter Karate Jugend und Kindersport. Karate seit 1990.</p>
         </li>
         <li>
-          <img src="images/design/Melvin-Sassi.jpg" alt="Melvin Sassi" class="avatar">
+          <img src="images/design/Melvin-Sassi.jpg" alt="Melvin Sassi" class="avatar" loading="lazy">
           <div><h3>Melvin Sassi</h3><p>Vizepräsident, Materialchef, Kumite</p></div>
           <p>2. Dan, Instruktor Kumite und Kampftraining, Selfdefence Instruktor. Karate seit 2001.</p>
         </li>
         <li>
-          <img src="images/design/Mauro-Raghias.jpg" alt="Mauro Raghias" class="avatar">
+          <img src="images/design/Mauro-Raghias.jpg" alt="Mauro Raghias" class="avatar" loading="lazy">
           <div><h3>Mauro Raghias</h3><p>Kassier, Instruktor Kindertraining</p></div>
           <p>1. Dan, J+S Leiter Jugendsport, Technik und Kata. Karate seit 1992.</p>
         </li>
         <li>
-          <img src="images/design/Sereina-Gienuth.jpg" alt="Sereina Gienuth" class="avatar">
+          <img src="images/design/Sereina-Gienuth.jpg" alt="Sereina Gienuth" class="avatar" loading="lazy">
           <div><h3>Sereina Gienuth</h3><p>Beisitzerin</p></div>
           <p>3. Kyu, Mitglied des Vorstands.</p>
         </li>
         <li>
-          <img src="images/design/Corina-Gienuth.jpg" alt="Corina Gienuth" class="avatar">
+          <img src="images/design/Corina-Gienuth.jpg" alt="Corina Gienuth" class="avatar" loading="lazy">
           <div><h3>Corina Gienuth</h3><p>Instruktorin Aerobic</p></div>
           <p>4. Kyu. Karate seit 1997.</p>
         </li>
         <li>
-          <img src="images/design/Carlo-Raghias.jpg" alt="Carlo Raghias" class="avatar">
+          <img src="images/design/Carlo-Raghias.jpg" alt="Carlo Raghias" class="avatar" loading="lazy">
           <div><h3>Carlo Raghias</h3><p>Aktuar</p></div>
           <p>4. Kyu, Ansprechperson für Anmeldungen. Karate seit 2010.</p>
         </li>
@@ -226,6 +253,12 @@
           <li><span>Kassier</span><a href="mailto:kassier@hinotori.ch">kassier@hinotori.ch</a></li>
           <li><span>Materialchef</span><a href="mailto:materialchef@hinotori.ch">materialchef@hinotori.ch</a></li>
         </ul>
+        <div class="mobile-contact">
+          <a href="https://wa.me/41791234567" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4 4 4V6h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+            WhatsApp beitreten
+          </a>
+        </div>
       </div>
       <div>
         <h2>Verbände und Links</h2>
