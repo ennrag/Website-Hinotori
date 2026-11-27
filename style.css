@@ -153,27 +153,8 @@ address{font-style:normal;margin:1.6rem 0 1.2rem;padding-left:1rem;border-left:3
 .rows a:hover{color:var(--gold);text-decoration:underline}
 
 /* Mobile contact improvements */
-.mobile-contact{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem}
-.mobile-contact .btn{flex:1;min-width:120px;font-size:.85rem;padding:.5rem .8rem}
-.mobile-contact .btn svg{vertical-align:middle;margin-right:.3rem}
 
 /* Tel link styling */
-.tel-link{color:var(--text);text-decoration:none;font-weight:500}
-.tel-link:hover{color:var(--gold);text-decoration:underline}
-
-/* Calendar section */
-.calendar-section{margin-top:1.2rem}
-.calendar-section .btn{font-size:.85rem;padding:.45rem .75rem}
-
-/* Map section */
-.map-section{padding:clamp(2.5rem,6vw,4rem) 0;background:var(--bg)}
-.map-container{max-width:1000px;margin:0 auto}
-.map-container iframe{border:0}
-@media (max-width:640px){
-  .map-section{padding:1.8rem 0}
-  .map-container iframe{height:300;}
-}
-
 /* Footer */
 .site-footer{background:#08090b;color:#d6d8de;padding-top:3.5rem;font-size:.94rem;border-top:3px solid var(--red)}
 .footer-cols{display:grid;grid-template-columns:repeat(3,minmax(160px,1fr));gap:2.2rem;padding-bottom:2.8rem}

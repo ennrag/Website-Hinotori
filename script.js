@@ -34,8 +34,8 @@
   // Back to top button
   const backToTopBtn = document.createElement('button');
   backToTopBtn.innerHTML = '↑';
-  backToTopBtn.className = 'back-to-top';
   backToTopBtn.setAttribute('aria-label', 'Zurück nach oben');
+  backToTopBtn.style.cssText = 'position:fixed;right:1.5rem;bottom:1.5rem;width:50px;height:50px;border-radius:50%;background:var(--red);color:#fff;border:none;font-size:1.5rem;cursor:pointer;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;z-index:100;box-shadow:0 4px 12px rgba(0,0,0,.25);align-items:center;justify-content:center;';
   document.body.appendChild(backToTopBtn);
 
   backToTopBtn.addEventListener('click', () => {
@@ -44,9 +44,11 @@
 
   window.addEventListener('scroll', () => {
     if (window.scrollY > 300) {
-      backToTopBtn.classList.add('visible');
+      backToTopBtn.style.opacity = '1';
+      backToTopBtn.style.visibility = 'visible';
     } else {
-      backToTopBtn.classList.remove('visible');
+      backToTopBtn.style.opacity = '0';
+      backToTopBtn.style.visibility = 'hidden';
     }
   });
 
