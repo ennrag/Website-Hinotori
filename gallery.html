@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bilder – Hinotori-Dojo Mels</title>
+<meta name="description" content="Impressionen aus dem Hinotori-Dojo: Trainings, Events, Turniere und Kindertraining in Mels.">
+<meta property="og:title" content="Bilder – Hinotori-Dojo Mels">
+<meta property="og:description" content="Impressionen aus Training, Turnieren und Events im Hinotori-Dojo.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hinotori.ch/gallery.html">
+<meta property="og:image" content="https://www.hinotori.ch/images/design/og-hinotori.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="de_CH">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0c0d10">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="images/design/hinotori_logo.png">
+<link rel="stylesheet" href="style.css?v=10">
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+<header class="site-header" id="top">
+  <div class="wrap bar">
+    <a href="index.html" class="brand">
+      <img src="images/design/hinotori_logo.png" alt="Hinotori-Dojo Logo" class="brand-logo"><span>Hinotori-Dojo</span>
+    </a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menü</button>
+    <nav id="nav" class="nav">
+      <a href="index.html#willkommen">Willkommen</a>
+      <a href="index.html#philosophie">Philosophie</a>
+      <a href="index.html#training">Training</a>
+      <a href="index.html#team">Team</a>
+      <a href="gallery.html" class="active" aria-current="page">Bilder</a>
+      <a href="index.html#kontakt">Kontakt</a>
+      <a href="index.html#schnuppern" class="btn btn-sm">Schnuppern</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-head">
+    <div class="kanji" aria-hidden="true">火</div>
+    <div class="wrap">
+      <h1>Bilder</h1>
+      <p class="lead">Impressionen aus Training, Turnieren und Events im Hinotori-Dojo.</p>
+      <div class="filters" id="filters" role="group" aria-label="Bilder filtern"></div>
+    </div>
+  </section>
+
+  <section class="section gallery-section">
+    <div class="wrap">
+      <p class="count" id="count" aria-live="polite"></p>
+      <div class="gallery" id="gallery"></div>
+      <p class="empty" id="empty" hidden>Hier erscheinen bald neue Bilder. Schau bald wieder vorbei.</p>
+    </div>
+  </section>
+</main>
+
+<dialog id="lb" class="lightbox" aria-label="Bildansicht">
+  <button class="lb-btn lb-close" aria-label="Schliessen">✕</button>
+  <button class="lb-btn lb-prev" aria-label="Vorheriges Bild">‹</button>
+  <figure>
+    <img id="lb-img" alt="">
+    <figcaption><span id="lb-cap"></span><span id="lb-num"></span></figcaption>
+  </figure>
+  <button class="lb-btn lb-next" aria-label="Nächstes Bild">›</button>
+</dialog>
+
+<footer class="site-footer">
+  <div class="footer-bottom">
+    <div class="wrap foot">
+      <span>© <span id="yr">2026</span> Hinotori-Dojo Mels · <a href="index.html">Zur Startseite</a></span>
+      <span><a href="impressum.html">Impressum</a> · <a href="impressum.html#datenschutz">Datenschutz</a></span>
+    </div>
+  </div>
+</footer>
+<script src="script.js?v=7" defer></script>
+<script src="gallery.js?v=2" defer></script>
+</body>
+</html>
